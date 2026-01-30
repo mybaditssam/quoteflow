@@ -35,7 +35,9 @@ export default async function OnboardingPage() {
     <main className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-xl px-6 py-14">
         <h1 className="text-2xl font-semibold">Welcome to QuoteFlow</h1>
-        <p className="mt-2 text-sm text-slate-600">A quick setup and you’re in.</p>
+        <p className="mt-2 text-sm text-slate-600">
+          A quick setup to personalize your workspace. QuoteFlow is designed for agency workflows and stores contact info only—no PHI.
+        </p>
 
         <form action={updateProfile} className="mt-6 space-y-4 rounded-xl border border-slate-200 bg-white p-6">
           <div>
@@ -62,8 +64,9 @@ export default async function OnboardingPage() {
               name="timezone"
               defaultValue={profile?.timezone ?? 'UTC'}
               className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2"
-              placeholder="America/Chicago"
+              placeholder="America/New_York"
             />
+            <p className="mt-1 text-xs text-slate-500">Used to keep follow-up dates aligned with your day.</p>
           </div>
 
           <button className="rounded-md bg-slate-900 px-4 py-2 text-white">Continue</button>

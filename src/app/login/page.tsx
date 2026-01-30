@@ -19,6 +19,9 @@ export default function LoginPage() {
   useEffect(() => {
     const sp = new URLSearchParams(window.location.search)
     setNextPath(sp.get('next') || '/app')
+
+    const m = sp.get('mode')
+    if (m === 'signup' || m === 'login') setMode(m)
   }, [])
 
   async function onSubmit(e: React.FormEvent) {
@@ -56,7 +59,9 @@ export default function LoginPage() {
     <main className="min-h-screen bg-slate-50">
       <div className="mx-auto flex max-w-md flex-col px-6 py-16">
         <h1 className="text-2xl font-semibold">{mode === 'login' ? 'Log in' : 'Create your account'}</h1>
-        <p className="mt-2 text-sm text-slate-600">Use email + password. (No PHI.)</p>
+        <p className="mt-2 text-sm text-slate-600">
+          Secure sign-in with email + password. Store contact info only—no PHI.
+        </p>
 
         <form onSubmit={onSubmit} className="mt-6 space-y-3 rounded-xl border border-slate-200 bg-white p-5">
           {mode === 'signup' ? (
@@ -107,11 +112,11 @@ export default function LoginPage() {
           <div className="text-center text-sm text-slate-600">
             {mode === 'login' ? (
               <button type="button" className="underline" onClick={() => setMode('signup')}>
-                Need an account?
+                Create an account
               </button>
             ) : (
               <button type="button" className="underline" onClick={() => setMode('login')}>
-                Already have an account?
+                Log in instead
               </button>
             )}
           </div>

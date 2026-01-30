@@ -31,12 +31,12 @@ export default async function TemplatesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold">Templates</h1>
-        <p className="mt-1 text-sm text-slate-600">Store your best SMS/email copy. No sending in v1.</p>
+        <h1 className="text-2xl font-semibold">Scripts</h1>
+        <p className="mt-1 text-sm text-slate-600">Save your best SMS/email scripts. Copy/paste as needed—no sending in v1.</p>
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white p-5">
-        <div className="font-medium">New template</div>
+        <div className="font-medium">New script</div>
         <form action={createTemplate} className="mt-4 space-y-3">
           <div className="grid gap-3 sm:grid-cols-3">
             <select name="channel" className="rounded-md border border-slate-200 px-3 py-2">
@@ -51,7 +51,7 @@ export default async function TemplatesPage() {
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white">
-        <div className="border-b border-slate-200 p-4 text-sm text-slate-600">{templates?.length || 0} templates</div>
+        <div className="border-b border-slate-200 p-4 text-sm text-slate-600">{templates?.length || 0} scripts</div>
         <div className="divide-y divide-slate-200">
           {(templates || []).map((t) => (
             <div key={t.id} className="p-4">
@@ -64,7 +64,11 @@ export default async function TemplatesPage() {
               <pre className="mt-3 whitespace-pre-wrap rounded-md bg-slate-50 p-3 text-sm text-slate-800">{t.body}</pre>
             </div>
           ))}
-          {(templates || []).length === 0 ? <div className="p-6 text-sm text-slate-600">No templates yet.</div> : null}
+          {(templates || []).length === 0 ? (
+            <div className="p-6 text-sm text-slate-600">
+              No scripts yet. Add one above to standardize your follow-up and quoting messages.
+            </div>
+          ) : null}
         </div>
       </div>
 
