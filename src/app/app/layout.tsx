@@ -28,13 +28,13 @@ export default async function AppLayout({ children }: { children: React.ReactNod
                 Today
               </Link>
               <Link className="hover:text-slate-900" href="/app/leads">
-                Leads
+                Prospects
               </Link>
               <Link className="hover:text-slate-900" href="/app/import">
                 Import
               </Link>
               <Link className="hover:text-slate-900" href="/app/templates">
-                Templates
+                Scripts
               </Link>
               <Link className="hover:text-slate-900" href="/app/billing">
                 Billing

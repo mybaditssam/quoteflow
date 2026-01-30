@@ -77,9 +77,9 @@ export default function ImportPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold">CSV Import</h1>
+        <h1 className="text-2xl font-semibold">Import prospects</h1>
         <p className="mt-1 text-sm text-slate-600">
-          Upload a CSV. Supported headers: first_name, last_name, email, phone, status, next_follow_up_date (YYYY-MM-DD).
+          Upload a CSV to bring in your prospect list. Supported headers: first_name, last_name, email, phone, status, next_follow_up_date (YYYY-MM-DD).
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export default function ImportPage() {
 
         {error ? <div className="mt-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{error}</div> : null}
         {imported != null ? (
-          <div className="mt-4 rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-700">Imported {imported} leads.</div>
+          <div className="mt-4 rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-700">Imported {imported} prospects.</div>
         ) : null}
 
         <div className="mt-6 flex items-center justify-between">
@@ -133,7 +133,13 @@ export default function ImportPage() {
                   <td className="p-3">{r.next_follow_up_date || '—'}</td>
                 </tr>
               ))}
-              {preview.length === 0 ? <tr><td className="p-6 text-slate-600" colSpan={5}>No file loaded.</td></tr> : null}
+              {preview.length === 0 ? (
+                <tr>
+                  <td className="p-6 text-slate-600" colSpan={5}>
+                    No file loaded yet. Choose a CSV above to preview your first 10 rows.
+                  </td>
+                </tr>
+              ) : null}
             </tbody>
           </table>
         </div>

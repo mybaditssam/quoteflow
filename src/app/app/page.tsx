@@ -22,14 +22,14 @@ export default async function TodayPage() {
     <div className="space-y-5">
       <div>
         <h1 className="text-2xl font-semibold">Today’s follow-ups</h1>
-        <p className="mt-1 text-sm text-slate-600">Leads with next follow-up due on or before today.</p>
+        <p className="mt-1 text-sm text-slate-600">Prospects with a follow-up due today (or earlier).</p>
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white">
         <div className="border-b border-slate-200 p-4 text-sm text-slate-600">Due: {todayStr}</div>
         <div className="divide-y divide-slate-200">
           {(leads || []).length === 0 ? (
-            <div className="p-6 text-sm text-slate-600">No follow-ups due. Nice.</div>
+            <div className="p-6 text-sm text-slate-600">You’re caught up—no follow-ups due today.</div>
           ) : (
             leads!.map((l) => (
               <div key={l.id} className="flex items-center justify-between p-4">

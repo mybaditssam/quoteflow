@@ -10,8 +10,8 @@ export default function BillingPage() {
   const [message, setMessage] = useState<string | null>(null)
 
   useEffect(() => {
-    if (searchParams.get('success')) setMessage('Subscription started. It can take a few seconds to reflect.')
-    if (searchParams.get('canceled')) setMessage('Checkout canceled.')
+    if (searchParams.get('success')) setMessage('Subscription started. It may take a few seconds to update.')
+    if (searchParams.get('canceled')) setMessage('Checkout was canceled—no changes were made.')
   }, [searchParams])
 
   async function go(endpoint: string) {
@@ -39,7 +39,7 @@ export default function BillingPage() {
       <div className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="font-medium">QuoteFlow subscription</div>
         <p className="mt-1 text-sm text-slate-600">
-          Start a subscription via Stripe Checkout. Then manage invoices/cancellation in the customer portal.
+          $29/month. Start your subscription in Stripe Checkout, then manage invoices and cancellation in the customer portal.
         </p>
 
         {message ? <div className="mt-4 rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-800">{message}</div> : null}
