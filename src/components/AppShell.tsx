@@ -51,13 +51,18 @@ export default function AppShell({ userLabel, subscribed, children }: Props) {
       })}
 
       <div className="mt-4 border-t border-slate-200 pt-4">
-        <Link
-          href="/logout"
-          onClick={() => onNavigate?.()}
-          className="flex items-center justify-center rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100"
+        <form
+          action="/logout"
+          method="post"
+          onSubmit={() => onNavigate?.()}
         >
-          Log out
-        </Link>
+          <button
+            type="submit"
+            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100"
+          >
+            Log out
+          </button>
+        </form>
       </div>
     </nav>
   )
