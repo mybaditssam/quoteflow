@@ -69,7 +69,7 @@ export default async function OnboardingPage() {
             <p className="mt-1 text-xs text-slate-500">Used to keep follow-up dates aligned with your day.</p>
           </div>
 
-          <button className="rounded-md bg-slate-900 px-4 py-2 text-white">Continue</button>
+          <button className="rounded-md bg-teal-600 px-4 py-2 text-white hover:bg-teal-700">Continue</button>
         </form>
       </div>
     </main>
