@@ -68,7 +68,7 @@ export default function AppShell({ userLabel, subscribed, children }: Props) {
   )
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       {/* Mobile top bar */}
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/80 backdrop-blur md:hidden">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
